@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.RegistrationFragment">
+
+    <EditText
+        android:id="@+id/editTextTitle"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:hint="Titulo"
+        android:inputType="text"
+        android:text="Miojo"
+        app:layout_constraintBottom_toTopOf="@+id/editTextIngredients"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextIngredients"
+        android:layout_width="300dp"
+        android:layout_height="120dp"
+        android:ems="10"
+        android:hint="Ingredientes"
+        android:inputType="text"
+        android:text="miojo e agua"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPreparationMode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTitle" />
+
+    <EditText
+        android:id="@+id/editTextPreparationMode"
+        android:layout_width="300dp"
+        android:layout_height="120dp"
+        android:ems="10"
+        android:hint="Modo de Preparo"
+        android:text="esquanta a agua, poe o miojo e espera tres minutos"
+        android:inputType="textLongMessage"
+        app:layout_constraintBottom_toTopOf="@+id/btn_save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextIngredients" />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="Cadastrar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPreparationMode"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

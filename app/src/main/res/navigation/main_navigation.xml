@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.example.provakotlin.view.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="recipe"
+            app:argType="com.example.provakotlin.model.Recipe" />
+        <action
+            android:id="@+id/actionDetailsBackList"
+            app:destination="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.provakotlin.view.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/actionHomeToRegistration"
+            app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/actionHomeToList"
+            app:destination="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.provakotlin.view.RegistrationFragment"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/actionRegistrationToList"
+            app:destination="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.provakotlin.view.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/actionListToDetails"
+            app:destination="@id/detailsFragment" />
+        <argument
+            android:name="recipe"
+            app:argType="com.example.provakotlin.model.Recipe" />
+        <action
+            android:id="@+id/actionListBackRegistraition"
+            app:destination="@id/registrationFragment" />
+    </fragment>
+</navigation>
