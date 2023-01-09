@@ -8,7 +8,7 @@ import com.example.provakotlin.R
 import com.example.provakotlin.model.Recipe
 import kotlinx.android.synthetic.main.res_layout.view.*
 
-class Adapter (private val onClicked: (Recipe) -> Unit): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class Adapter (private val onClicked: () -> Unit): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private lateinit var items: List<Recipe>
 
@@ -36,17 +36,21 @@ class Adapter (private val onClicked: (Recipe) -> Unit): RecyclerView.Adapter<Re
     }
 
     class ScheduleViewHolder constructor(
-        ItemView: View
-    ): RecyclerView.ViewHolder(ItemView) {
+        itemView: View
+    ): RecyclerView.ViewHolder(itemView) {
 
         private val recipeTitle = itemView.textViewTitle
+        private val recipeIngredients = itemView.textViewReceipeIngredients
+        private val recipePrepareMode = itemView.textViewReceipePreparation
 
-        fun bind(recipe: Recipe, onClicked: (Recipe) -> Unit){
+        fun bind(recipe: Recipe, onClicked: () -> Unit){
 
             recipeTitle.text = recipe.title
+            recipeIngredients.text = recipe.ingredients
+            recipePrepareMode.text = recipe.preparationMode
 
             itemView.setOnClickListener{
-                onClicked(recipe)
+                onClicked()
             }
         }
     }

@@ -21,24 +21,17 @@ class ListFragment : Fragment(R.layout.fragment_list) {
 
     private lateinit var adapter: Adapter
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initAdapter()
         populateItems()
-        listRecipe()
         backFragment(view)
 
         //arg nao chega !!
         //como tava com problema eu ia tentar passar o args para o cardview, mas n rolou
+        println("<<<<<<<<<<<<<<<<<<<<")
         println(args.recipe)
-    }
-
-    private fun listRecipe() {
-        textViewTitle.text = args.recipe.title
-        textViewTitle.text = args.recipe.title
-        textViewReceipeIngredients.text = args.recipe.ingredients
-        textViewReceipePreparation.text = args.recipe.preparationMode
+        println("<<<<<<<<<<<<<<<<<<<<")
     }
 
     private fun populateItems() {
@@ -50,8 +43,8 @@ class ListFragment : Fragment(R.layout.fragment_list) {
     }
 
     private fun initAdapter() {
-        adapter = Adapter { recipe ->
-//            openDetails(args)
+        adapter = Adapter {
+            println("FUNCIONA?")
         }
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = adapter
